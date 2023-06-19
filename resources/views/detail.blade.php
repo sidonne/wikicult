@@ -99,9 +99,7 @@
 
 					<p>{!! $detail->detail !!}</p>
 
-					<div class="categories">
-						<a href="{{url('category/'.Str::slug($detail->category->title).'/'.$detail->category->id)}}">{{$detail->category->title}} </a>
-					</div>
+		
                     <!-- @auth -->
 					<!-- Add Comment -->
 					<!-- <div class="container">

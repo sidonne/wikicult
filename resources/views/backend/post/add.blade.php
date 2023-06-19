@@ -1,6 +1,8 @@
 
 @extends('layout')
 @section('content')
+
+
         <div class="container-fluid">
 
           <!-- Breadcrumbs-->
@@ -41,7 +43,7 @@
                       <tr>
                           <th>Category<span class="text-danger">*</span></th>
                           <td>
-                            <select class="form-control" name="category" multiple="">
+                            <select class="form-control" name="category">
                               @foreach($cats as $cat)
                               <option value="{{$cat->id}}">{{$cat->title}}</option>
                               @endforeach
@@ -51,7 +53,7 @@
                       <tr>
                           <th>Detail<span class="text-danger">*</span></th>
                           <td>
-                            <textarea class="form-control my-editor" name="detail">{!! old('content', '123') !!}</textarea>
+                            <textarea class="form-control" id="summernote" name="detail">{!! old('content', 123) !!}</textarea>
                           </td>
                       </tr>
                       <tr>
@@ -76,7 +78,7 @@
 
 
 
-        <script src="/js/tinymce/tinymce.min.js"></script>
+        <!-- <script src="/js/tinymce/tinymce.min.js"></script>
 <script>
   var editor_config = {
     path_absolute : "/",
@@ -116,6 +118,7 @@
   };
 
   tinymce.init(editor_config);
-</script>
+</script> -->
+
 
 @endsection

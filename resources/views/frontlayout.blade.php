@@ -8,6 +8,11 @@
     <link rel="stylesheet" type="text/css" href="{{asset('lib')}}/bs4/bootstrap.min.css" />
     <!-- Jquery -->
     <script type="text/javascript" src="{{asset('lib')}}/jquery-3.5.1.min.js"></script>
+
+    <!-- Summernote css links -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+
     <!-- BS4 Js -->
     <script type="text/javascript" src="{{asset('lib')}}/bs4/bootstrap.bundle.min.js"></script>
 </head>
@@ -55,5 +60,19 @@
 	<main class="container mt-4">
 		@yield('content')
 	</main>
+
+    <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+
+    <!-- summernote JS LINKS -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#summernote").summernote({
+                height : 500,
+            });
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
+
 </body>
 </html>

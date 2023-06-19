@@ -36,7 +36,7 @@
                       <tr>
                           <th>Detail<span class="text-danger">*</span></th>
                           <td>
-                            <textarea class="form-control my-editor" name="detail">{!! old('content', '123') !!}</textarea>
+                            <textarea class="form-control" id="summernote" name="detail">{!! old('content', '123') !!}</textarea>
                           </td>
                       </tr>
                       <tr>

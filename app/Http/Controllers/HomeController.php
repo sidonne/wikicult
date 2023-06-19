@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
 use App\Models\Category;
 use App\Models\Comment;
 class HomeController extends Controller
@@ -82,6 +83,23 @@ class HomeController extends Controller
     function manage_posts(Request $request){
         $posts=Post::where('user_id',$request->user()->id)->orderBy('id','desc')->get();
         return view('manage-posts',['data'=>$posts]);
+    }
+
+    function update(Request $request, User $user){
+        $user->update([
+
+            'name' => $request->name,
+            'fname' => $request->fname,
+            'lname' => $request->lname,
+            'phone' => $request->phone,
+            'location' => $request->location,
+            'email' => $request->email,
+            'updated_at' => now()
+
+        ]);
+
+        return $this->success('Profile Updated Succesfully!');
+
     }
 
 }

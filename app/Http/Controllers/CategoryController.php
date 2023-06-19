@@ -47,7 +47,7 @@ class CategoryController extends Controller
 
         $category=new Category;
         $category->title=$request->title;
-        $category->detail=$request->detail;
+        $category->slug=$request->slug;
         $category->save();
 
         return redirect('admin/category/create')->with('success','Data has been added');
@@ -80,7 +80,7 @@ class CategoryController extends Controller
 
         $category=Category::find($id);
         $category->title=$request->title;
-        $category->detail=$request->detail;
+        $category->slug=$request->slug;
         $category->save();
 
         return redirect('admin/category/'.$id.'/edit')->with('success','Data has been added');

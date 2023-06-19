@@ -24,7 +24,8 @@
             <tr>
               <th>#</th>
               <th>Title</th>
-              <th>Category</th>
+              <th>Created On</th>
+              <th>Updated On</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -33,7 +34,8 @@
               <tr>
                 <td>{{$post->id}}</td>
                 <td>{{$post->title}}</td>
-                <td>{{$post->category->title}}</td>
+                <td>{{$post->created_at->format("m/d/Y")}} at {{$post->created_at->format("H:m:s")}}</td>
+                <td>{{$post->updated_at->format("m/d/Y")}} at {{$post->updated_at->format("H:m:s")}}</td>
                 <td>
                   <a class="btn btn-info btn-sm" href="{{url('admin/post/'.$post->id.'/edit')}}">Update</a>
                   <a class="btn btn-success btn-sm" href="{{url('detail/'.Str::slug($post->title).'/'.$post->id)}}">View</a>

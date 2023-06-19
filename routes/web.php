@@ -62,3 +62,7 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+    // Route::get('profile', [App\Http\Controllers\HomeController::class, 'inde'])->name('profile');
+    Route::post('profile/{user}', [App\Http\Controllers\HomeController::class, 'update'])->name('profile.update');

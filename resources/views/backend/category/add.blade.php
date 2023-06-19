@@ -56,7 +56,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label>Category Slug*</label>
-                                    <input type="text" name="slug" class="form-control" placeholder="Category name" required />
+                                    <input type="text" name="slug" class="form-control" placeholder="Category slug" required />
                                 </div>
                             </div>
 

@@ -51,7 +51,7 @@ INSERT INTO `admins` (`id`, `username`, `password`, `created_at`, `updated_at`) 
 CREATE TABLE `categories` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `detail` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -60,9 +60,9 @@ CREATE TABLE `categories` (
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`id`, `title`, `detail`, `created_at`, `updated_at`) VALUES
-(3, 'Category 1', 'Category 1', '2020-11-11 12:23:10', '2020-11-28 08:47:17'),
-(4, 'Category 2', 'Category 2', '2020-11-13 12:01:06', '2020-11-28 08:47:27');
+INSERT INTO `categories` (`id`, `title`, `slug`, `created_at`, `updated_at`) VALUES
+(3, 'Category 1', 'Category-1', '2020-11-11 12:23:10', '2020-11-28 08:47:17'),
+(4, 'Category 2', 'Category-2', '2020-11-13 12:01:06', '2020-11-28 08:47:27');
 
 -- --------------------------------------------------------
 
@@ -206,6 +206,10 @@ INSERT INTO `settings` (`id`, `comment_auto`, `user_auto`, `recent_limit`, `popu
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -219,7 +223,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'John', 'john@gmail.com', NULL, '$2y$10$bddLTVD41yry.pUP0gfnTO2Ijb8jnWXh0mHOpAT8RvShXHmrGY5TO', NULL, '2020-11-23 12:16:12', '2020-11-23 12:16:12');
+(1, 'John', 'Eduardo', 'Talisay', '12324354534', 'yaounde', 'john@gmail.com', NULL, '$2y$10$bddLTVD41yry.pUP0gfnTO2Ijb8jnWXh0mHOpAT8RvShXHmrGY5TO', NULL, '2020-11-23 12:16:12', '2020-11-23 12:16:12');
 
 --
 -- Indexes for dumped tables

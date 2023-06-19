@@ -23,6 +23,10 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('backend')}}/css/sb-admin.css" rel="stylesheet">
 
+     <!-- Summernote css links -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+
     @if(!Session::has('adminData'))
     <script type="text/javascript">
       window.location.href="{{url('admin/login')}}";
@@ -148,6 +152,19 @@
     <!-- Demo scripts for this page-->
     <script src="{{asset('backend')}}/js/demo/datatables-demo.js"></script>
     <script src="{{asset('backend')}}/js/demo/chart-area-demo.js"></script>
+
+    <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+
+    <!-- summernote JS LINKS -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#summernote").summernote({
+                height : 500,
+            });
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
 
   </body>
 
