@@ -222,7 +222,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+INSERT INTO `users` (`id`, `name`, `fname`, `lname`, `phone`, `location`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'John', 'Eduardo', 'Talisay', '12324354534', 'yaounde', 'john@gmail.com', NULL, '$2y$10$bddLTVD41yry.pUP0gfnTO2Ijb8jnWXh0mHOpAT8RvShXHmrGY5TO', NULL, '2020-11-23 12:16:12', '2020-11-23 12:16:12');
 
 --
